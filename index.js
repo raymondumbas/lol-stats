@@ -1,7 +1,11 @@
-let gameName = "rayyu";
-let tagLine = "NA1";
-let matchData = "";
+window.addEventListener('DOMContentLoaded', init);
 
+function init(){
+
+}
+
+
+let matchData = "";
 
 async function fetchPastGames(gameName, tagLine) {
   try {
@@ -23,8 +27,19 @@ async function fetchPastGames(gameName, tagLine) {
   }
 }
 
-// Example usage
-fetchPastGames(gameName, tagLine)
+
+
+//Query Selectors
+const gameNameInput = document.querySelector("#gameNameInput");
+const tagLineInput = document.querySelector("#tagLineInput");
+const submitButton = document.querySelector("#submit");
+
+//Event Listener Functions
+function searchUser(){
+    let gameName = gameNameInput.value;
+    let tagLine = tagLineInput.value;
+
+    fetchPastGames(gameName, tagLine)
   .then(data => {
       matchData = data;
       console.log(matchData);
@@ -32,4 +47,6 @@ fetchPastGames(gameName, tagLine)
   .catch(error => {
       console.error('Fetch data error:', error);
   });
-
+}
+//Event Listeners
+submitButton.addEventListener("click", searchUser);

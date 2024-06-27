@@ -1,3 +1,5 @@
+const API_KEY = "RGAPI-01f129c9-fa15-4e43-ae61-54fc6f7f206b"
+
 /*
     Proxy Server Code from tutorial by Cooper Codes on youtube:
     https://www.youtube.com/watch?v=pkxU150DSgw&ab_channel=CooperCodes
@@ -10,7 +12,7 @@ var app = express();
 
 app.use(cors());
 
-const API_KEY = "RGAPI-cdca444a-3f18-4964-8c0d-18f8665a92ba"
+
 
 function getPlayerPuuID(gameName, tagLine){
     return axios.get(`https://americas.api.riotgames.com/riot/account/v1/accounts/by-riot-id/${gameName}/${tagLine}?api_key=${API_KEY}`)
