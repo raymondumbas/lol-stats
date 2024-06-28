@@ -7,7 +7,7 @@ For several years, a significant amount of my free time has been consumed by Lea
 - use ddragon API to get champ and player icons
 - calculate stat differences between you and enemy laner
 # Implementation Notes
-
+- Create a file named "api-key.js" that exports the value of the Riot Games Developer API Key
 ## proxyServer.js
 
 axios.get() is a Promise thats why "await" is used when calling getPlayerPUUID
