@@ -1,4 +1,4 @@
-const API_KEY = "RGAPI-450fb029-843b-4213-8266-01abc57ea77a"
+const {API_KEY} = require('./api-key');
 
 /*
     Proxy Server Code from tutorial by Cooper Codes on youtube:
