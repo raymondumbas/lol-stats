@@ -1,4 +1,4 @@
-const API_KEY = "RGAPI-01f129c9-fa15-4e43-ae61-54fc6f7f206b"
+const API_KEY = "RGAPI-450fb029-843b-4213-8266-01abc57ea77a"
 
 /*
     Proxy Server Code from tutorial by Cooper Codes on youtube:
