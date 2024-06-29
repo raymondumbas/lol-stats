@@ -1,6 +1,84 @@
+:root{
+    --background-color: #013651;
+    --primary-color: #226B7D;
+    --secondary-color: #E4CC8E;
+    --accent-color: #efe0b0;
+    --text-color: #E2E3DB;
+}
+
 *{
     white-space: pre-line;
 }
+
+body{
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/*-------------------- Search Page --------------------*/
+#searchPage{
+    font-size: 3rem;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    margin:0;
+    text-align: center;
+}
+
+#searchPage input{
+    background-color: var(--accent-color);
+    font-size: 3rem;
+    width: 30vw;
+    height: 5vw;
+    text-align: center;
+    border-radius: 25px;
+    margin-bottom: 2rem;
+}
+
+#searchPage button{
+    color: var(--text-color);
+    background-color: var(--primary-color);
+    font-size: 70%;
+    border-radius: 25px;
+    width: 10vw;
+    height: 10vh;
+}
+
+/*-------------------- Match Page --------------------*/
 #matchPage{
     display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+}
+
+.match{
+    background-color: var(--primary-color);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 40vw;
+    height: 10vh;
+    border-radius: 10px;
+}
+
+.userData{
+    width:20%;
+    margin-right: auto;
+    text-align: center;
+}
+.statDiff{
+    width: 30%;
+    text-align: center;
+    margin: auto;
+}
+
+.enemyData{
+    width:20%;
+    margin-left:auto;
+    text-align: center;
 }

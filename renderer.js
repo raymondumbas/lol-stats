@@ -4,7 +4,6 @@ function init(){
 
 }
 
-
 let matchData = "";
 
 async function fetchPastGames(gameName, tagLine) {
