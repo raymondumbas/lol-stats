@@ -45,7 +45,6 @@ function displayMatchData(gameName, matchArray){
     for(let i = 0; i < 5; i++){
         let currentMatch = matchArray[i]; //Match Data
         let currentMatchElement = matchElements[i]; //Match HTML element
-
         //Find User and Enemy Laner
         let currentPlayer = [];
         for(let i = 0; i < 10; i++){
@@ -61,13 +60,21 @@ function displayMatchData(gameName, matchArray){
                 break;
             }
         }
-
-        //Display User and Enemy Laner
-        console.log(user);
-        console.log(enemyLaner);
-
         
-    }
+        console.log(user);
+        //Display User Data
+        let userKDA = user.kills + " / " + user.deaths + " / " + user.assists;
+        currentMatchElement.querySelector(".userData").textContent = user.championName + "\r\n" + userKDA;
+    
+        //Display Stat Diff
+        let goldDiff = user.goldEarned - enemyLaner.goldEarned;
+        let damageDiff = user.totalDamageDealtToChampions - enemyLaner.totalDamageDealtToChampions ;
+        currentMatchElement.querySelector(".statDiff").textContent = user.teamPosition + "\r\nGold Difference: " + goldDiff + "\r\n Damage Difference: " + damageDiff;
+
+        //Display Enemy Laner data
+        let enemyLanerKDA = enemyLaner.kills + " / " + enemyLaner.deaths + " / " + enemyLaner.assists;
+        currentMatchElement.querySelector(".enemyData").textContent = enemyLaner.championName + "\r\n" + enemyLanerKDA;
+        }
 
 
 

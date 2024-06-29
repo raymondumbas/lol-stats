@@ -1,3 +1,6 @@
+*{
+    white-space: pre-line;
+}
 #matchPage{
     display: none;
 }
