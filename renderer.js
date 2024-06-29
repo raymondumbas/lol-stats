@@ -27,22 +27,61 @@ async function fetchPastGames(gameName, tagLine) {
   }
 }
 
-
-
 //Query Selectors
+const searchPage = document.querySelector("#searchPage");
 const gameNameInput = document.querySelector("#gameNameInput");
 const tagLineInput = document.querySelector("#tagLineInput");
 const submitButton = document.querySelector("#submit");
 
+const matchPage = document.querySelector("#matchPage");
 //Event Listener Functions
+
+function displayMatchData(gameName, matchArray){
+    const matchElements = matchPage.querySelectorAll(".match");
+    let user = [];
+    let enemyLaner = [];
+ 
+    //Load 5 matches
+    for(let i = 0; i < 5; i++){
+        let currentMatch = matchArray[i]; //Match Data
+        let currentMatchElement = matchElements[i]; //Match HTML element
+
+        //Find User and Enemy Laner
+        let currentPlayer = [];
+        for(let i = 0; i < 10; i++){
+            currentPlayer = currentMatch.info.participants[i];
+
+            //Check username
+            if(currentPlayer.riotIdGameName == gameName){
+                user = currentPlayer;
+
+                //Get enemy laner
+                let enemyIndex = (i + 5) % 10;
+                enemyLaner = currentMatch.info.participants[enemyIndex];
+                break;
+            }
+        }
+
+        //Display User and Enemy Laner
+        console.log(user);
+        console.log(enemyLaner);
+
+        
+    }
+
+
+
+}
+
 function searchUser(){
     let gameName = gameNameInput.value;
     let tagLine = tagLineInput.value;
 
     fetchPastGames(gameName, tagLine)
   .then(data => {
-      matchData = data;
-      console.log(matchData);
+        searchPage.style.display = "none";
+        matchPage.style.display = "flex";
+        displayMatchData(gameName,data);
   })
   .catch(error => {
       console.error('Fetch data error:', error);
