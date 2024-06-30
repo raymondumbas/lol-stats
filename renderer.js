@@ -80,6 +80,7 @@ function displayMatchData(gameName, matchArray){
         currentMatchElement.querySelector(".enemyData img").src = `./assets/champion/${enemyLaner.championName}.png`;
         }
     
+        matchPage.querySelector("#matchPageUserIcon").src = `./assets/profileicon/${user.profileIcon}.png`;
 
 
 }
