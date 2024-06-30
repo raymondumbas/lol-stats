@@ -33,13 +33,16 @@ const tagLineInput = document.querySelector("#tagLineInput");
 const submitButton = document.querySelector("#submit");
 
 const matchPage = document.querySelector("#matchPage");
-//Event Listener Functions
+const matchPageUser = document.querySelector("#matchPageUser");
 
+//Event Listener Functions
 function displayMatchData(gameName, matchArray){
     const matchElements = matchPage.querySelectorAll(".match");
     let user = [];
     let enemyLaner = [];
- 
+    matchPageUser.textContent = gameName;
+
+    
     //Load 5 matches
     for(let i = 0; i < 5; i++){
         let currentMatch = matchArray[i]; //Match Data
@@ -63,8 +66,9 @@ function displayMatchData(gameName, matchArray){
         console.log(user);
         //Display User Data
         let userKDA = user.kills + " / " + user.deaths + " / " + user.assists;
-        currentMatchElement.querySelector(".userData").textContent = user.championName + "\r\n" + userKDA;
-    
+        currentMatchElement.querySelector(".userDataText").textContent = user.championName + "\r\n" + userKDA;
+        currentMatchElement.querySelector(".userData img").src = `./assets/champion/${user.championName}.png`;
+
         //Display Stat Diff
         let goldDiff = user.goldEarned - enemyLaner.goldEarned;
         let damageDiff = user.totalDamageDealtToChampions - enemyLaner.totalDamageDealtToChampions ;
@@ -72,9 +76,10 @@ function displayMatchData(gameName, matchArray){
 
         //Display Enemy Laner data
         let enemyLanerKDA = enemyLaner.kills + " / " + enemyLaner.deaths + " / " + enemyLaner.assists;
-        currentMatchElement.querySelector(".enemyData").textContent = enemyLaner.championName + "\r\n" + enemyLanerKDA;
+        currentMatchElement.querySelector(".enemyDataText").textContent = enemyLaner.championName + "\r\n" + enemyLanerKDA;
+        currentMatchElement.querySelector(".enemyData img").src = `./assets/champion/${enemyLaner.championName}.png`;
         }
-
+    
 
 
 }

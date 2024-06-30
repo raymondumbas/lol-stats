@@ -2,7 +2,7 @@
     --background-color: #013651;
     --primary-color: #226B7D;
     --secondary-color: #E4CC8E;
-    --accent-color: #efe0b0;
+    --accent-color: #ecd176;
     --text-color: #E2E3DB;
 }
 
@@ -47,12 +47,21 @@ body{
 }
 
 /*-------------------- Match Page --------------------*/
+#matchPageWelcome{
+    text-align:center;
+    font-size: 1.5rem;
+}
+
+#matchPageUser{
+    color: var(--accent-color);
+}
+
 #matchPage{
     display: none;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 3rem;
+    gap: 1rem;
 }
 
 .match{
@@ -64,6 +73,11 @@ body{
     width: 40vw;
     height: 10vh;
     border-radius: 10px;
+    padding: 0.5rem;
+}
+
+.match img{
+    width: 3rem;
 }
 
 .userData{
@@ -71,6 +85,11 @@ body{
     margin-right: auto;
     text-align: center;
 }
+
+.userDataText{
+    color: var(--accent-color)
+}
+
 .statDiff{
     width: 30%;
     text-align: center;
