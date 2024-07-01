@@ -1,10 +1,15 @@
 # League of Legends Stat Tracker
 For several years, a significant amount of my free time has been consumed by League of Legends. I particularly enjoyed playing the competitive "Ranked" game mode where you try to climb to higher ranks by winning games. This mode requires more attention and focus than just loading up the casual mode. I have made this web app to hopefully obtain useful insight to help my gameplay.
 ***
+# How to Run
+- run by typing "npm start" in the console
+- there is no check for an up to date API Key
+  - must get your own API Key from https://developer.riotgames.com/
+***
 # Features Notes
 - see 5 recent matches
   - see older games (WIP)
-- use ddragon API to get champ and player icons (WIP)
+- use ddragon API to get champ and player icons 
 - stats for you and enemy laner
   - champion
   - KDA
@@ -24,8 +29,6 @@ For several years, a significant amount of my free time has been consumed by Lea
 ## proxyServer.js
 axios.get() is a Promise thats why "await" is used when calling getPlayerPUUID
 ***
-# Design Notes
-
 # Credits
  LoL Stats isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing Riot Games properties. Riot Games, and all associated properties are trademarks or registered trademarks of Riot Games, Inc
   
