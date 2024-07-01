@@ -1,7 +1,7 @@
 const {API_KEY} = require('./api-key');
 
 /*
-    Proxy Server Code from tutorial by Cooper Codes on youtube:
+    Proxy Server Code follows tutorial by Cooper Codes on youtube:
     https://www.youtube.com/watch?v=pkxU150DSgw&ab_channel=CooperCodes
 */
 var express = require('express');

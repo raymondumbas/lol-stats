@@ -1,13 +1,18 @@
 # League of Legends Stat Tracker
+Electron Based Application using HTML/CSS/JS to get player data from the video game League of Legends using the Riot Games Devloper API.<br><br>
 For several years, a significant amount of my free time has been consumed by League of Legends. I particularly enjoyed playing the competitive "Ranked" game mode where you try to climb to higher ranks by winning games. This mode requires more attention and focus than just loading up the casual mode. I have made this web app to hopefully obtain useful insight to help my gameplay.
+***
+Example Result: <br>
+<img src="./assets/screenshots/lolStatsMatchPage.png" alt = "screenshotMatchPage" width = "600">
 ***
 # How to Run
 - run by typing "npm start" in the terminal
 - there is no check for an up to date API Key
   - must get your own API Key from https://developer.riotgames.com/
+  - NOTE: this key expires daily 
 ***
 # Features Notes
-- see 5 recent matches
+- see 5 recent matches 
   - see older games (WIP)
 - use ddragon API to get champ and player icons 
 - stats for you and enemy laner
