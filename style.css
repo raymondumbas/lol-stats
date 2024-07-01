@@ -2,7 +2,7 @@
     --background-color: #013651;
     --primary-color: #226B7D;
     --secondary-color: #E4CC8E;
-    --accent-color: #ecd176;
+    --accent-color: #f5dc8a;
     --text-color: #E2E3DB;
 }
 
@@ -10,9 +10,36 @@
     white-space: pre-line;
 }
 
+button{
+    transition-duration: 0.4s;
+}
+
+button:hover{
+    cursor:pointer;
+    background-color: rgb(255,255,255,0.5);    
+}
 body{
     background-color: var(--background-color);
     color: var(--text-color);
+}
+
+/*-------------------- Nav Bar --------------------*/
+#navBar{
+    width:100vw;
+    top:0;
+    left:0;
+    position:fixed;
+
+}
+
+#homeButton{
+    background-color: transparent;
+    color: var(--text-color);
+    margin-left: 1rem;
+    padding-bottom: 1rem;
+    font-size: 2rem;
+    border:none;
+    font-size: 2rem;
 }
 
 /*-------------------- Search Page --------------------*/

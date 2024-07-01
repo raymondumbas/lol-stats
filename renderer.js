@@ -35,6 +35,7 @@ const submitButton = document.querySelector("#submit");
 const matchPage = document.querySelector("#matchPage");
 const matchPageUser = document.querySelector("#matchPageUser");
 
+const homeButton = document.querySelector("#homeButton");
 //Event Listener Functions
 function displayMatchData(gameName, matchArray){
     const matchElements = matchPage.querySelectorAll(".match");
@@ -49,21 +50,43 @@ function displayMatchData(gameName, matchArray){
         let currentMatchElement = matchElements[i]; //Match HTML element
         //Find User and Enemy Laner
         let currentPlayer = [];
-        for(let i = 0; i < 10; i++){
-            currentPlayer = currentMatch.info.participants[i];
 
-            //Check username
-            if(currentPlayer.riotIdGameName == gameName){
-                user = currentPlayer;
+        findPlayersLoop:
+            for(let i = 0; i < 10; i++){
+                currentPlayer = currentMatch.info.participants[i];
 
-                //Get enemy laner
-                let enemyIndex = (i + 5) % 10;
-                enemyLaner = currentMatch.info.participants[enemyIndex];
-                break;
+                //Check username
+                if(currentPlayer.riotIdGameName == gameName){
+                    user = currentPlayer;
+
+                    //Get Enemy
+                    const userPosition = user.teamPosition;
+                    let enemyTeam = [];
+
+                    //User is on Team 1
+                    if(user.teamId == 100){
+                        //Enemy is on Team 2
+                        enemyTeam = currentMatch.info.participants.slice(6);
+                    }
+                    //User is on Team 2
+                    else{
+                        //Enemy is on Team 1
+                        enemyTeam = currentMatch.info.participants.slice(1,6);
+                    }
+                    
+                    for(const player of enemyTeam){
+                        if(player.teamPosition == userPosition){
+                            enemyLaner = player;
+                            break findPlayersLoop;
+                        }
+                    }
+                
+                    
+                }
             }
-        }
         
         console.log(user);
+        console.log(enemyLaner);
         //Display User Data
         let userKDA = user.kills + " / " + user.deaths + " / " + user.assists;
         currentMatchElement.querySelector(".userDataText").textContent = user.championName + "\r\n" + userKDA;
@@ -99,5 +122,13 @@ function searchUser(){
       console.error('Fetch data error:', error);
   });
 }
+
+function goToHomePage(){
+    matchPage.style.display = "none";
+    searchPage.style.display = "flex";
+    gameNameInput.value = "";
+    tagLineInput.value = "";
+}
 //Event Listeners
 submitButton.addEventListener("click", searchUser);
+homeButton.addEventListener("click", goToHomePage);
