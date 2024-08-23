@@ -1,15 +1,28 @@
 # League of Legends Stat Tracker
-Electron Based Application using HTML/CSS/JS to get player data from the video game League of Legends using the Riot Games Devloper API.<br><br>
+Electron Based Application using HTML/CSS/JS to get player data from the video game League of Legends using the Riot Games Developer API.<br><br>
+
+# Project Motivation
 For several years, a significant amount of my free time has been consumed by League of Legends. I particularly enjoyed playing the competitive "Ranked" game mode where you try to climb to higher ranks by winning games. This mode requires more attention and focus than just loading up the casual mode. I have made this web app to hopefully obtain useful insight to help my gameplay.
-***
-Example Result: <br>
-<img src="./assets/screenshots/lolStatsMatchPage.png" alt = "screenshotMatchPage" width = "600">
-***
+
+# Quick Overview
+<u>Profile Search Screen:</u><br>
+Enter username as displayed in game and tagline which is also shown in the game/client without the # that is follows<br>
+<img src="./assets/screenshots/lolStatsSearchPage.png" alt = "Screenshot of the search page" width = "600"><br><br>
+
+<u>Example Results Page:</u><br>
+User's name and icon will be displayed with the 5 most recent matches<br>
+<img src="./assets/screenshots/lolStatsMatchPage.png" alt = "Screenshot of the results match page" width = "600">
+
 # How to Run
 - run by typing "npm start" in the terminal
-- there is no check for an up to date API Key
+- API Key:
+  - found in the file /lol-stats/api-key.js
+  - there is no check for an up to date API Key
   - must get your own API Key from https://developer.riotgames.com/
   - NOTE: this key expires daily 
+  - This file is ignored by the repository so the key is not uploaded, must set up yourself:
+  - <img src="./assets/screenshots/apiKeyFile.png" alt = "Example of API Key file setup" width = "600">
+  
 ***
 # Features Notes
 - see 5 recent matches 
